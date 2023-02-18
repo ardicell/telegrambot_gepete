@@ -14,15 +14,15 @@ bot.start((ctx) => ctx.reply("Selamat Datang Cok, Takok opo sembarangg nek kene,
 
 bot.help((ctx) => {
   ctx.reply(
-    "Command Bot ini cok \n /image -> buat gambar dari text \n /ask -> takok opo ae bebas "
+    "Command Bot ini cok \n /gambar -> buat gambar dari text \n /tanya -> takok opo ae bebas "
   );
 });
 
 
 
 // Image command
-bot.command("image", async (ctx) => {
-  const text = ctx.message.text?.replace("/image", "")?.trim().toLowerCase();
+bot.command("gambar", async (ctx) => {
+  const text = ctx.message.text?.replace("/gambar", "")?.trim().toLowerCase();
 
   if (text) {
    
@@ -39,7 +39,7 @@ bot.command("image", async (ctx) => {
   } else {
     ctx.telegram.sendMessage(
       ctx.message.chat.id,
-      "Kasih deskripsi sehabis ketik ini cok /image",
+      "Kasih deskripsi sehabis ketik ini cok /gambar",
       {
         reply_to_message_id: ctx.message.message_id,
       }
@@ -49,8 +49,8 @@ bot.command("image", async (ctx) => {
 
 // Chat command
 
-bot.command("ask", async (ctx) => {
-  const text = ctx.message.text?.replace("/ask", "")?.trim().toLowerCase();
+bot.command("tanya", async (ctx) => {
+  const text = ctx.message.text?.replace("/tanya", "")?.trim().toLowerCase();
 
   if (text) {
     ctx.sendChatAction("typing");
@@ -63,13 +63,13 @@ bot.command("ask", async (ctx) => {
   } else {
     ctx.telegram.sendMessage(
       ctx.message.chat.id,
-      "Kalo Tanya Pake ini cok /ask",
+      "Kalo Tanya Pake ini cok /tanya",
       {
         reply_to_message_id: ctx.message.message_id,
       }
     );
   
-    //  reply("Kalo Tanya Pake ini cok /ask");
+    //  reply("Kalo Tanya Pake ini cok /tanya");
   }
 });
 
