@@ -10,7 +10,7 @@ const openai = new OpenAIApi(configuration);
 module.exports = openai;
 
 const bot = new Telegraf(process.env.TG_API);
-bot.start((ctx) => ctx.reply("Welcome , You can ask anything from me"));
+bot.start((ctx) => ctx.reply("Selamat Datang, Takok opo sembarangg nek kene"));
 
 bot.help((ctx) => {
   ctx.reply(
@@ -39,7 +39,7 @@ bot.command("image", async (ctx) => {
   } else {
     ctx.telegram.sendMessage(
       ctx.message.chat.id,
-      "You have to give some description after /image",
+      "Kasih deskripsi sehabis ketik ini cok /image",
       {
         reply_to_message_id: ctx.message.message_id,
       }
@@ -63,13 +63,13 @@ bot.command("ask", async (ctx) => {
   } else {
     ctx.telegram.sendMessage(
       ctx.message.chat.id,
-      "Please ask anything after /ask",
+      "Kalo Tanya Pake ini cok /ask",
       {
         reply_to_message_id: ctx.message.message_id,
       }
     );
   
-    //  reply("Please ask anything after /ask");
+    //  reply("Kalo Tanya Pake ini cok /ask");
   }
 });
 
