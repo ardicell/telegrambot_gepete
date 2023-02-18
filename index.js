@@ -10,11 +10,11 @@ const openai = new OpenAIApi(configuration);
 module.exports = openai;
 
 const bot = new Telegraf(process.env.TG_API);
-bot.start((ctx) => ctx.reply("Selamat Datang, Takok opo sembarangg nek kene"));
+bot.start((ctx) => ctx.reply("Selamat Datang Cok, Takok opo sembarangg nek kene, Join Grub @internetgratishoax"));
 
 bot.help((ctx) => {
   ctx.reply(
-    "This bot can perform the following command \n /image -> to create image from text \n /ask -> ank anything from me "
+    "Command Bot ini cok \n /image -> buat gambar dari text \n /ask -> takok opo ae bebas "
   );
 });
 
